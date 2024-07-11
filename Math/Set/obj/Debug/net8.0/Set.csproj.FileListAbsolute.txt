@@ -12,3 +12,4 @@ C:\Users\mitch\Documents\Projects\.NET\Math\Set\obj\Debug\net8.0\refint\Set.dll
 C:\Users\mitch\Documents\Projects\.NET\Math\Set\obj\Debug\net8.0\Set.pdb
 C:\Users\mitch\Documents\Projects\.NET\Math\Set\obj\Debug\net8.0\Set.genruntimeconfig.cache
 C:\Users\mitch\Documents\Projects\.NET\Math\Set\obj\Debug\net8.0\ref\Set.dll
+C:\Users\mitch\Documents\Projects\.NET\Math\Set\obj\Debug\net8.0\Set.sourcelink.json

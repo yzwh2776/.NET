@@ -37,6 +37,13 @@ class Set {
 
 		}
 
+	public void Get_UnionSets(Set a, Set b) {
+
+				
+
+		}
+		 
+
 static void Main(string[] args) {
 
 	Set ZERO= new Set();
@@ -74,6 +81,17 @@ static void Main(string[] args) {
 		mySet.set= TEMP.set;		
 
 		}
+
+	Console.WriteLine("-----------------------------------------");
+
+	Set X= new Set();
+	Set Y= new Set();
+	Set X_U_Y= new Set();
+	X.Do_PairSet("a", "b");
+	Y.Do_PairSet("c", "d");
+	X_U_Y.Get_UnionSets(X.set);
+	
+	
 
 	}
 
