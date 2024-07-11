@@ -1,0 +1,14 @@
+C:\Users\mitch\Documents\Projects\.NET\Math\Set\obj\Debug\net8.0\Set.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mitch\Documents\Projects\.NET\Math\Set\obj\Debug\net8.0\Set.AssemblyInfoInputs.cache
+C:\Users\mitch\Documents\Projects\.NET\Math\Set\obj\Debug\net8.0\Set.AssemblyInfo.cs
+C:\Users\mitch\Documents\Projects\.NET\Math\Set\obj\Debug\net8.0\Set.csproj.CoreCompileInputs.cache
+C:\Users\mitch\Documents\Projects\.NET\Math\Set\bin\Debug\net8.0\Set.exe
+C:\Users\mitch\Documents\Projects\.NET\Math\Set\bin\Debug\net8.0\Set.deps.json
+C:\Users\mitch\Documents\Projects\.NET\Math\Set\bin\Debug\net8.0\Set.runtimeconfig.json
+C:\Users\mitch\Documents\Projects\.NET\Math\Set\bin\Debug\net8.0\Set.dll
+C:\Users\mitch\Documents\Projects\.NET\Math\Set\bin\Debug\net8.0\Set.pdb
+C:\Users\mitch\Documents\Projects\.NET\Math\Set\obj\Debug\net8.0\Set.dll
+C:\Users\mitch\Documents\Projects\.NET\Math\Set\obj\Debug\net8.0\refint\Set.dll
+C:\Users\mitch\Documents\Projects\.NET\Math\Set\obj\Debug\net8.0\Set.pdb
+C:\Users\mitch\Documents\Projects\.NET\Math\Set\obj\Debug\net8.0\Set.genruntimeconfig.cache
+C:\Users\mitch\Documents\Projects\.NET\Math\Set\obj\Debug\net8.0\ref\Set.dll
