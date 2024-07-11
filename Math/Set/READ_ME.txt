@@ -182,6 +182,17 @@ So I just realized that my functions can both take 'Set' objects as parameters, 
 Sets as the return object. I think I need to rewrite my code to make that the case so 
 that I'm not working directly with strings, but instead working with set objects. 
 
+We've run into the next issue. I have no idea what the 'static' keyword is or how to use
+the 'this' keyword. I think I need to figure those out if I'm hoping to have a set object
+that has functions that take sets as parameters and then returns a new set. 
 
+I was doing this before I reworked this, but I was doing it in the function, where I think
+I want to do this redefining of set names in the main method instead of in a function. 
  
+I want to make a Remove_Element function that takes an integer as a parameter. The idea
+is that we can remove an element from a set, by its ordered postion (index) in the set. 
+We might also want to be able to remove an element with a string as a parameter also. 
+
+I got the Do_PairSet() function to work, but I'm doing it by updating a created Set object
+instead of creating a new Set object. I think I might be able to fix that though.
 

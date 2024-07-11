@@ -1,11 +1,8 @@
-﻿
-// Create Set class
-class Set {
+﻿class Set {
 
-	public string set; // Create a field 
+	public string set; 
 	public string elements;
 
-	// Create a class constructor for the Set class
 	public Set() {
 
 		set= "{}";
@@ -13,88 +10,91 @@ class Set {
 
 		}
 
-	public void Do_PairSet(string a, string b) {
+	public Set(string arg) {
 
-		if (elements != "") {
+		elements= arg;
+		set= "{" + arg + "}";
 
-			elements+= ", ";
+		}
 
-			}
+	public void Remove_Element(string arg) {
+
+		int pos1;
+
+		pos1= this.elements.IndexOf(arg);
+
+		Console.WriteLine(pos1);
+	
+		}
 		
-		if (a == b) {
-		
-			elements+= a;
-			set= "{" + elements + "}";
+/*
+	public Set Remove_Element(int pos) {
+	
+		int pos1, pos2;
+		pos1= this.elements.IndexOf(',');
+
+		}
+*/		
+	
+	public Set Do_PairSet(Set a) {
+
+		Set TEMP= new Set();
+
+		if (this.elements == a.elements) {
+
+			TEMP.elements= this.set;
+			TEMP.set= "{" + TEMP.elements + "}";
 
 			}
 
 		else {
 
-			elements+= a + ", " + b;
-			set= "{" + elements + "}";
-			
+			TEMP.elements= a.set + ", " + this.set;
+			TEMP.set= "{" + TEMP.elements + "}";
+
 			}
+	
+		return TEMP;
 
 		}
-
-	public void Get_UnionSets(Set a, Set b) {
-
-				
-
-		}
-		 
 
 static void Main(string[] args) {
 
-	Set ZERO= new Set();
-	Console.WriteLine($"0 := {ZERO.set}");
-
-	Set ONE= new Set();
-	ONE.Do_PairSet(ZERO.set, ZERO.set);
-	Console.WriteLine($"1 := {ONE.set}");	
-
-	Set TWO= new Set();
-	TWO.Do_PairSet(ZERO.set, ONE.set);
-	Console.WriteLine($"2 := {TWO.set}");
-	
-	Set THREE= new Set();
-	THREE.Do_PairSet(ZERO.set, TWO.set);
-	Console.WriteLine($"3 := {THREE.set}");
-
-	Set FOUR= new Set();
-	FOUR.Do_PairSet(ZERO.set, THREE.set);
-	Console.WriteLine($"4 := {FOUR.set}");
-
-	Console.WriteLine("---------------------------------------");
+	Console.WriteLine();
+	Console.WriteLine("Section 1: (Constructing Basic Sets)\n");
 
 	Set Empty_Set= new Set();
-	Set mySet= new Set();
+	Set X= new Set("X");
 
-	for (int i= 0; i <= 10; i++) {
+	Console.WriteLine($"The set, X := {X.set}, ");
+	Console.WriteLine($"Has, {X.elements}, as an element\n");
+	Console.WriteLine($"We can also generate the empty set, {Empty_Set.set}\n");  
 
-		Console.WriteLine($"{i} := {mySet.set} ");
+	Console.WriteLine("--------------------------------------------------\n");
+	Console.WriteLine("Section 2: (Pair Sets)");
+	Console.WriteLine();
+	
+	Set Y= new Set("Y");
 
-		Set TEMP= new Set();
-		TEMP.Do_PairSet(Empty_Set.set, mySet.set);
-//		Console.WriteLine($"x = {TEMP.set}\n");
+	Console.WriteLine("We can generate pair sets");
+	Console.WriteLine($"For example, if we have the sets, X := {X.set} and Y := {Y.set},");
+	Console.WriteLine($"then their pair set is the set, XY := {Y.Do_PairSet(X).set} == {X.Do_PairSet(Y).set}");
+	Console.WriteLine();
+	Console.WriteLine("Using pair sets, we can generate the set of Natural Numbers, N, using only the empty set:");
+	Console.WriteLine();
+	
+	Set N= new Set();
+	for (int i= 0; i <=10; i++) {
 
-		mySet.set= TEMP.set;		
+		Console.WriteLine($"{i} := {N.set}");	
+		N= N.Do_PairSet(Empty_Set);
 
 		}
 
-	Console.WriteLine("-----------------------------------------");
-
-	Set X= new Set();
-	Set Y= new Set();
-	Set X_U_Y= new Set();
-	X.Do_PairSet("a", "b");
-	Y.Do_PairSet("c", "d");
-	X_U_Y.Get_UnionSets(X.set);
+	Console.WriteLine("Section 2a: (Removing Elements from sets)");
 	
-	
+	Console.WriteLine();
 
 	}
-
-
 
 }
