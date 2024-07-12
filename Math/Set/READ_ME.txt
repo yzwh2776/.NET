@@ -196,3 +196,29 @@ We might also want to be able to remove an element with a string as a parameter 
 I got the Do_PairSet() function to work, but I'm doing it by updating a created Set object
 instead of creating a new Set object. I think I might be able to fix that though.
 
+Everything is back working again, I want to make a Remove_Element() function, but I want it
+to work as a 'pop()' function (especially when considering generating natural numbers). 
+For example;
+
+	Suppose we have the set X := {{}, {{}, {}}} == 2, and we want to find the
+	predecessor set, or the set which generated this set, we would want to return to 
+	the set X_-1= {{}} == 1. So how might we do this? 
+
+What if instead of focusing on using the string class, we use our Set object. We might then
+want to pass Remove_Element() a Set obj and we will attempt to remove that set, from the 
+set calling Remove_Element(). So how can we do this? 
+
+If we know the length of the set (# of characters in the string), then we can use 
+IndexOf(string arg) to find the integer index of the starting position of the string, and 
+using the length, we can find the ending index. We could then use the Remove() function
+to remove all characters between the starting and ending indices. Let's try this.
+ 
+I'm having a hard time figuring out this Remove_Element() function. I could remove sets,
+and I could remove elements, but I'm still left with some ', ' that I'm not sure how to 
+get rid of or account for.
+
+Let's try to find an example problem:
+
+	Suppose we have a set Hello := {{H}, {E}, {L}, {L}, {O}}.
+	If we want to remove the set {E}, we can either remove an additional, 2 characters
+	before the start, or 2 chars after the end of the set. 
