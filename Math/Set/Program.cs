@@ -14,7 +14,7 @@ class Text {
 			}
 
 		Console.WriteLine();
-		System.Threading.Thread.Sleep(200);
+		System.Threading.Thread.Sleep(300);
 
 		}
 
@@ -51,7 +51,7 @@ class Set {
 		Text.PRINT("\n	Generating new Set...");
 		Text.PRINT("	Successfully created new set!");
 		Text.COMMAND($"\nPRINT_Set();");
-		Text.COMMAND($"{this.set};");
+		Text.COMMAND($"{this.set}");
 
 		}
 
@@ -65,13 +65,13 @@ class Set {
 		Text.PRINT("\n	Generating new Set...");
 		Text.PRINT("	Successfully created new set!");
 		Text.COMMAND($"\nPRINT_Set();");
-		Text.COMMAND($"{this.set};");
+		Text.COMMAND($"{this.set}");
 
 		}
 
 	public Set Remove_Element(Set a) {
 
-		Text.COMMAND($"RUN_Remove_Element();");
+		Text.COMMAND($"\nRUN_Remove_Element();");
 
 		Text.PRINT($"\n	Running Remove_Element()...");
 
@@ -82,41 +82,53 @@ class Set {
 		length= a.set.Length;
 
 		Text.PRINT($"	Attempting to remove {a.set} from {this.set}...");
-
+		
 		try {
 
-			if (this.set[start_pos + length + 1] == ',') {
-			
-				this.set= this.set.Remove(start_pos, length + 2);
-			
-				Text.PRINT($"	Successfully removed {a.set} from {this.set}.");
-				Text.COMMAND($"\nPRINT_Set();");
-				Text.COMMAND($"{this.set}");
-			
-				}
-
+			Text.PRINT("	Trying...");
+			Text.PRINT($"	Removing {this.set.Substring(start_pos, length)}...");
+			this.set= this.set.Remove(start_pos, length + 2);
+		
+			Text.PRINT($"	Successfully removed {a.set}!");
+			Text.COMMAND($"\nPRINT_Set();");
+			Text.COMMAND($"{this.set}");
+		
 			}
 
 		catch {
 
+			Text.PRINT("	Caught Exception!");
+			Text.PRINT($"	Removing {this.set.Substring(start_pos, length)}...");
 			this.set= this.set.Remove(start_pos - 2, length + 2);
 
-			Text.PRINT($"	Successfully removed {a.set} from {this.set}.");
-			Text.COMMAND($"PRINT_Set();");
+			Text.PRINT($"	Successfully removed {a.set}!");
+			Text.COMMAND($"\nPRINT_Set();");
 			Text.COMMAND($"{this.set}");
-
+			
 			}
 
-		start_pos= this.elements.IndexOf(a.elements);
-		length= a.elements.Length;
+		finally {	
 
-		Text.PRINT($"	Validating contents of {this.set}...");
+			start_pos= this.elements.IndexOf(a.elements);
+			length= a.elements.Length;
+	
+			Text.PRINT($"\n	Validating contents of {this.set}...");
 
-		try {
+			try {
 
-			if (this.elements[start_pos + length + 1] == ',') {
+				Text.PRINT("	Trying...");
+				Text.COMMAND($"	Removing {this.elements.Substring(start_pos - 1, length + 4)}...");
+				this.elements= this.elements.Remove(start_pos - 1, length + 4);
+				Text.COMMAND($"\nPRINT_Elements();");
+				Text.COMMAND($"{this.elements}");
 
-				this.elements= this.elements.Remove(start_pos, length + 2);
+				}
+			
+			catch {
+
+				Text.PRINT("	Caught Exception!");
+				Text.PRINT($"	Removing {this.elements.Substring(start_pos - 3, length + 4)}...");
+				this.elements= this.elements.Remove(start_pos - 3, length + 4);
 				Text.COMMAND($"\nPRINT_Elements();");
 				Text.COMMAND($"{this.elements}");
 
@@ -124,14 +136,7 @@ class Set {
 
 			}
 
-		catch {
-
-			this.elements= this.elements.Remove(start_pos - 2, length + 2);
-			Text.COMMAND($"\nPRINT_Elements();");
-			Text.COMMAND($"{this.elements}");
-
-			}
-
+		Text.PRINT("\n	Contents validated!");
 		return this;
 
 		}
@@ -196,10 +201,13 @@ class NOTES {
 		Set World= new Set("World!");
 		Set Hello_World= World.Do_PairSet(Hello);
 
-		Text.PRINT($"			\"We have now three sets {Hello.set}, {World.set}, and their pair set {Hello_World.set}");
+		Text.PRINT($"\n			\"We now have three sets {Hello.set}, {World.set}, and their pair set {Hello_World.set}");
 		Text.PRINT("			We can use Remove_Element() to remove a specified element from a set.\"");
 
 		Hello_World= Hello_World.Remove_Element(Hello);
+
+		Hello_World= World.Do_PairSet(Hello);
+		Hello_World= Hello_World.Remove_Element(World);
 
 		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
 
@@ -233,7 +241,7 @@ class NOTES {
 
 	public static void Chapter_2() {
 
-		// Console.WriteLine("\x1b[2J");
+		Console.WriteLine("\x1b[2J");
 		Text.PRINT("\n				Section 2: Pair Sets\n");
 		
 		Set X= new Set("X");
@@ -282,7 +290,7 @@ class NOTES {
 
 	public static void Chapter_1() {
 
-		// Console.WriteLine("\x1b[2J");
+		Console.WriteLine("\x1b[2J");
 		Text.PRINT("				Section 1: Generating Sets");
 		Text.PRINT("\n			We can generate the empty set ('{}') with Set()\"\n");
 
