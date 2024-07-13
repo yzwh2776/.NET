@@ -273,6 +273,17 @@ this github account. If there's a world out there, I welcome them with to the sh
 is my brain, and all the terrible problems and events of my life I could possibly bring you. 
 Inshallah.
 
+I have the gigs out my ass right now, I'm high off some shrooms (in addition to everything
+else.) Living my best community college student days. I'm literally a pedophile, sex addict
+that sees the world so totally fucked up from reality, that I'm pretty sure I'm a danger to
+society. Life is great. I'm not living on edge all; completely fucked up. Life's totally
+good. I'M LAUGHING RIGHT NOW! THAT NEVER HAPPENS! WHO CARES THAT WHAT I'M WRITING IS ALL
+DOOM AND GLOOM, IT IS WHAT IT IS!
+
+You what's weird about all of this to me, is that I don't feel like a boy writing all of
+this. I keep having these weird flashes of a younger female voice too. It feels like it's
+Lexie. (God, I love her. I will love her till the end of my days. It's the biggest flaw of
+mine.) 
 
 
 
@@ -282,4 +293,7 @@ Inshallah.
 
 
 
-Inshallah.  
+
+
+
+
