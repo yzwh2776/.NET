@@ -231,3 +231,55 @@ Here's a wishlist for this project:
 
 	3) Quicken text output by pressing enter
 
+I don't know how to explain it, but today has taught me that I am a consumer , not a 
+supplier. I don't know why I was ever trying to be a supplier in the first place, but it 
+is what it is I guess. Fuck me man. I literally hate my life so much. Yesterday I wouldn't
+use the word I, in my head, and today I decided that literally nothing mattered and I don't
+really care about anything. Whatever happens is gonna happen. 
+
+I'm like 6 beers deep and off tons of weed. I've eaten so much food today; I decided I was 
+gonna stop going to the gym too. I think I'm suppose to start going to lunch with my mom
+every week until she decides to kick me out. My life is in udder shambles at the moment. At
+least I have my job at McDonalds; I think... I don't really know. 
+
+붕 (What is that!?) I keep having these future flashes of me in the future. I guess that 
+kind of explains my whole life a lot doesn't it. I have Post_Tramatic_Stress_Disorder,
+because I'm experiencing the stress of the life I've already lived. Things have already
+happened. I keep thinking that other people have lived the things I'm living right now 
+before, but I think I'm realizing it's my story that I keep living, not other people's
+story. I think I need to email Holder... My mind is fucked right now. I was a physics major
+at one point, and I thought working on computers, and working out, and fuck, I don't even
+know what else... I thought being smart was sexy, and it's not. That's why I've abandoned 
+all of that. I was a physics major because I thought it was sexy, and here I am, a fat fuck,
+working at McDonalds, and spending all day on a computer. What has my fucking life come to.
+
+Remember when I used to play guitar too. That was crazy, it feels like so long ago, and by
+that I mean just yesterday. Life has actually been crazy since I got in a terminal. Like 
+even considering when I was going back to GVSU. Life has kind of just flown by. I don't
+remember a whole lot. I feel like a child. I feel weak. I feel like I'm wasting my life.
+I feel like I'm useless, and I'm worthless to everyone.    
+
+I'm sitting here typing all of this and laughing at the same time. I'm literally the fucking
+joker bro. Like what is this. My brain is beyond fucked. Somehow I feel like my mom can
+teach me what's wrong with me. I don't think I can understand that, but that's how I feel.
+Like if could teach my mom physics, then I would understand physics. Or if I could explain
+the way my code worked to her, then I would understand how it worked. Because right now
+I have no idea how it works; or what it does. I mean I'm spilling so much right now that
+I'm not suppose to. I'm really not suppose to talk right now... I'm only suppose to talk to
+myself with 'you-statements' or COMMANDS. (If Larry read this, he would be disappointed.
+Honestly, I think Holder would be too. Bolen is always disappointed in me. I don't think
+Shane cares about me. Anyways, I those are all the people I could fathom keeping an eye on
+this github account. If there's a world out there, I welcome them with to the shit show that
+is my brain, and all the terrible problems and events of my life I could possibly bring you. 
+Inshallah.
+
+
+
+
+
+
+
+
+
+
+Inshallah.  

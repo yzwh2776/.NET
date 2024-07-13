@@ -127,7 +127,7 @@ class Set {
 			catch {
 
 				Text.PRINT("	Caught Exception!");
-				Text.PRINT($"	Removing {this.elements.Substring(start_pos - 3, length + 4)}...");
+				Text.PRINT($"	Removing {this.elements.Substring(start_pos - 1, length + 2)}...");
 				this.elements= this.elements.Remove(start_pos - 3, length + 4);
 				Text.COMMAND($"\nPRINT_Elements();");
 				Text.COMMAND($"{this.elements}");
