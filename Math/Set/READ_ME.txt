@@ -222,3 +222,12 @@ Let's try to find an example problem:
 	Suppose we have a set Hello := {{H}, {E}, {L}, {L}, {O}}.
 	If we want to remove the set {E}, we can either remove an additional, 2 characters
 	before the start, or 2 chars after the end of the set. 
+
+Here's a wishlist for this project:
+
+	1) Write the complete notes to a text file. 
+
+	2) Union set and intersections of sets. (Combinations and Permutations)
+
+	3) Quicken text output by pressing enter
+

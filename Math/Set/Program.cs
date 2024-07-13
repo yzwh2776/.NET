@@ -1,4 +1,6 @@
-﻿class Text {
+﻿using System.IO;
+
+class Text {
 	
 	public static void PRINT(string text) {
 
@@ -7,12 +9,12 @@
 		for (int i= 0; i < text.Length; i++) {
 
 			Console.Write(chars[i]);
-			System.Threading.Thread.Sleep(25);
+			System.Threading.Thread.Sleep(30);
 
 			}
 
 		Console.WriteLine();
-		System.Threading.Thread.Sleep(250);
+		System.Threading.Thread.Sleep(200);
 
 		}
 
@@ -23,12 +25,12 @@
 		for (int i= 0; i < text.Length; i++) {
 
 			Console.Write(chars[i]);
-			System.Threading.Thread.Sleep(20);
+			System.Threading.Thread.Sleep(10);
 
 			}
 
 		Console.WriteLine();
-		System.Threading.Thread.Sleep(300);
+		System.Threading.Thread.Sleep(200);
 
 		}
 
@@ -166,6 +168,7 @@ class Set {
 	public static Set Get_NaturalNumbers(int n) {
 
 		Text.COMMAND($"\nRUN_Get_NaturalNumbers({n});");
+		Text.PRINT($"\n	Running Get_NaturalNumbers({n})...");
 		
 		Set Empty_Set= new Set();
 		Set N= new Set();
@@ -179,43 +182,65 @@ class Set {
 
 		}
 
-class NOTES() {
+	}
 
-		public static 
-		Text.PRINT("\n				Notes on Sets\n");
 
-		Text.PRINT("\n		Table of Contents:");
-		Text.PRINT("\n	Section 1: Generating Sets");
-		Text.PRINT("\n	Section 2: Pair Sets");
-		Text.PRINT("\n	Section 3: Removing Element From Sets\n");
+class NOTES {
+
+	public static void Chapter_3() {
+
+		Console.WriteLine("\x1b[2J");
+		Text.PRINT("				Section 3: Removing Elements From Sets\n");
+
+		Set Hello= new Set("Hello");
+		Set World= new Set("World!");
+		Set Hello_World= World.Do_PairSet(Hello);
+
+		Text.PRINT($"			\"We have now three sets {Hello.set}, {World.set}, and their pair set {Hello_World.set}");
+		Text.PRINT("			We can use Remove_Element() to remove a specified element from a set.\"");
+
+		Hello_World= Hello_World.Remove_Element(Hello);
+
 		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
 
-		switch (Console.ReadKey().key) {
+		string x= Console.ReadLine();
 
-		Case ConsoleKey.Enter:
+		switch (x) {
 
-			while(console.ReadKey().Key != ConsoleKey.Enter) {
+		case "1":
 
-			Console.WriteLine("----------------------------------------------------------------------");	
+			NOTES.Chapter_1();
+			break;
+			
+		case "2":
 
+			NOTES.Chapter_2();
+			break;
 
-			Text.PRINT("	Section 1: Generating Sets");
+		case "3":
 
-			Text.PRINT("\n		We can generate the empty set ('{}') with Set()\"\n");
+			NOTES.Chapter_3();
+			break;
 
-			Set Empty_Set= new Set();
-			Set X= new Set("X");
+		case "":
 
-				}
+			NOTES.Intro();
+			break;
 
 			}
+	
+		}
 
-		Console.WriteLine("----------------------------------------------------------------------");	
-		Text.PRINT("\n	Section 2: Pair Sets\n");
+	public static void Chapter_2() {
+
+		// Console.WriteLine("\x1b[2J");
+		Text.PRINT("\n				Section 2: Pair Sets\n");
+		
+		Set X= new Set("X");
 		Set Y= new Set("Y");
 
-		Text.PRINT($"		\"{X.set} and {Y.set} are both sets with {X.elements} and {Y.elements} as elements, respectively.");
-		Text.PRINT("		Using Do_PairSet(), we can generate the pair set between two sets:\"");
+		Text.PRINT($"			\"{X.set} and {Y.set} are both sets with {X.elements} and {Y.elements} as elements, respectively.");
+		Text.PRINT("			Using Do_PairSet(), we can generate the pair set between two sets:\"");
 
 		Set XY= new Set();
 		
@@ -223,25 +248,121 @@ class NOTES() {
 
 		Text.PRINT("		\"Using Set() and Do_PairSet(), we can generate the set of natrual numbers:\"");
 
-		Set.Get_NaturalNumbers(10);	
+		Set.Get_NaturalNumbers(3);	
 
-		Console.WriteLine("----------------------------------------------------------------------");	
-		Text.PRINT("	Section 3: Removing Elements From Sets\n");
+		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
 
-		Set Hello= new Set("Hello");
-		Set World= new Set("World!");
-		Set Hello_World= World.Do_PairSet(Hello);
+		string x= Console.ReadLine();
 
-		Text.PRINT($"		\"We have now three sets {Hello.set}, {World.set}, andtheir pair set {Hello_World.set}");
-		Text.PRINT("		We can use Remove_Element() to remove a specified element from a set.\"");
+		switch (x) {
 
-		Hello_World= Hello_World.Remove_Element(Hello);
+		case "1":
+
+			NOTES.Chapter_1();
+			break;
+			
+		case "2":
+
+			NOTES.Chapter_2();
+			break;
+
+		case "3":
+
+			NOTES.Chapter_3();
+			break;
+
+		case "":
+
+			NOTES.Chapter_3();
+			break;
+
+			}
 	
-	}		
+		}
+
+	public static void Chapter_1() {
+
+		// Console.WriteLine("\x1b[2J");
+		Text.PRINT("				Section 1: Generating Sets");
+		Text.PRINT("\n			We can generate the empty set ('{}') with Set()\"\n");
+
+		Set Empty_Set= new Set();
+		Set X= new Set("X");
+
+		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
+
+		string x= Console.ReadLine();
+
+		switch (x) {
+
+		case "1":
+
+			NOTES.Chapter_1();
+			break;
+			
+		case "2":
+
+			NOTES.Chapter_2();
+			break;
+
+		case "3":
+
+			NOTES.Chapter_3();
+			break;
+
+		case "":
+
+			NOTES.Chapter_2();
+			break;
+
+			}
+
+
+		}
+	
+
+	public static void Intro() {
+
+		Console.WriteLine("\x1b[2J");
+		Text.PRINT("\n					Notes on Sets\n");
+
+		Text.PRINT("\n			Table of Contents:");
+		Text.PRINT("\n				Section 1: Generating Sets");
+		Text.PRINT("\n				Section 2: Pair Sets");
+		Text.PRINT("\n				Section 3: Removing Element From Sets\n");
+		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
+
+		string x= Console.ReadLine();
+
+		switch (x) {
+
+		case "1":
+
+			NOTES.Chapter_1();
+			break;
+			
+		case "2":
+
+			NOTES.Chapter_2();
+			break;
+
+		case "3":
+
+			NOTES.Chapter_3();
+			break;
+
+		case "":
+
+			NOTES.Chapter_1();
+			break;
+
+			}
+
+		}
 	
 static void Main(string[] args) {
-
-	Set.NOTES();
+	
+	NOTES.Intro();
 
 	}
 
