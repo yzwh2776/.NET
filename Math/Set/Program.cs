@@ -95,8 +95,13 @@ class Set {
 		Text.PRINT("\n	Running UnionSet()...");
 
 		Set Ux= new Set();
+		Text.PRINT("	Filling new set...");
 		Ux.elements= x.elements;
 		Ux.set= x.elements;
+	
+		Text.PRINT("	Successfully created new set!");
+		Text.COMMAND($"\nPRINT_Set();");
+		Text.COMMAND($"{Ux.set}");
 		
 		return Ux;
 	
@@ -112,30 +117,112 @@ class Set {
 		return xUy;
 
 		}
+
+	public bool Contains_Element(Set x) {
+
+		Text.COMMAND($"\nRUN_Contains_Element({this.set},{x.set});");
+		Text.PRINT("\n	Running Contains_Element()...");
+		Text.PRINT($"	Searching {this.set} for {x.set}...");
+
+		if (this.set.Contains(x.set)) {
+
+			Text.PRINT($"	Found {x.set}!");
+			return true;
+			
+			}
+
+		else {
+			
+			Text.PRINT($"	Failed to find {x.set}!");
+			return false;
+
+			}
+
+		}
+
+	public Set Remove_Element(Set x) {
+
+		Text.COMMAND($"\nRUN_Remove_Element({this.set},{x.set});");
+		Text.PRINT("\n	 Running Remove_Element()...");
+		
+		if (this.Contains_Element(x)) {
+
+			Text.PRINT($"\n	Attempting to remove {x.set} from {this.set}...");
+			
+			int start= this.set.IndexOf(x.set);
+			int length= x.set.Length;
+			
+			if (this.set[start - 1] == ',') {
+
+				this.set= this.set.Remove(start - 1, length + 1);
+			
+				}
+			
+			else if (this.set[start + length] == ',') {
 	
-	public static Set Intersect(Set x, Set y) {
+				this.set= this.set.Remove(start, length + 1);
 
-		Text.COMMAND($"\nRUN_Intersect({x.set},{y.set});");
-		Text.PRINT("\n	Running Interect()...");
+				}
+			
+			else {
 
-		
+				this.set= this.set.Remove(start, length);
 
-		
+				}
+			
+			Text.PRINT($"	Successfully removed {x.set}!");
+			Text.PRINT($"\n	Validating contents of {this.set}...");
+
+			start= this.elements.IndexOf(x.set);
+				
+			if (this.elements[start - 1] == ',') {
+
+				this.elements= this.elements.Remove(start - 1, length + 1);
+			
+				}
+			
+			else if (this.elements[start + length] == ',') {
+	
+				this.elements= this.elements.Remove(start, length + 1);
+
+				}
+			
+			else {
+
+				this.elements= this.elements.Remove(start, length);
+
+				}
+			
+			Text.COMMAND($"\nPRINT_ELEMENTS(this.set);");
+			Text.COMMAND($"{this.elements}");
+	
+			Text.PRINT($"	Contents validated!");
+			Text.COMMAND($"\nPRINT_Set();");
+			Text.COMMAND($"{this.set}");
+	
+			return this;
+
+			}
+			
+		else {
+
+			return this;	
+
+			}
+
+		}
 
 	static void Main(string[] arg) {
 
-		Set Empty_Set= new Set();
+		Set ONE= new Set("1");
+		Set TWO= new Set("2");
+		Set THREE= new Set("3");
 
-		Set X= new Set("X");
-		Set Y= new Set("Y");
+		Set x1= Set.UnionSet(ONE,TWO);
+		x1= Set.UnionSet(x1, THREE);
 
-		Set XY= Set.PairSet(X, Y);
-
-		Set UX= Set.UnionSet(X);
-		Set XUY= Set.UnionSet(X, Y);
-
-		Set ONE= Set.PairSet(Empty_Set, Empty_Set);
-		ONE= Set.UnionSet(ONE);
+		TWO= Set.UnionSet(TWO);
+		x1= x1.Remove_Element(TWO);
 
 		}
 

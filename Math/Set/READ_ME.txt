@@ -231,4 +231,17 @@ Here's a wishlist for this project:
 
 	3) Quicken text output by pressing enter
 
+I scrapped the code I wrote yesterday and started a new branch on the project. I cleaned 
+up the Set class a little bit, but it still isn't going to work like I want it to. I want
+a set, to contain elements, which are still Set objects, instead of containing a string 
+object.. I don't know how to do this.
 
+For example, how would we compare the elements of two sets. 
+
+After attempting to reassemble my notes class I think we might be able to use inheritance to
+fix the issue of sets and elements both being string fields of the same object. A set should
+be the parents class and elements a child class of a set. For our notes; notes is the parent
+class, and chapters are the child class. 
+
+I got everything figured out as of right now! We have pair sets and union sets, and a method
+to remove elements from sets. I think I should work on building my notes up again now.
