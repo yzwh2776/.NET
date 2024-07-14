@@ -95,7 +95,7 @@ class Set {
 		Text.PRINT("\n	Running UnionSet()...");
 
 		Set Ux= new Set();
-		Text.PRINT("	Filling new set...");
+		Text.PRINT("\n	Filling new set...");
 		Ux.elements= x.elements;
 		Ux.set= x.elements;
 	
@@ -143,7 +143,7 @@ class Set {
 	public Set Remove_Element(Set x) {
 
 		Text.COMMAND($"\nRUN_Remove_Element({this.set},{x.set});");
-		Text.PRINT("\n	 Running Remove_Element()...");
+		Text.PRINT("\n	Running Remove_Element()...");
 		
 		if (this.Contains_Element(x)) {
 
@@ -174,29 +174,39 @@ class Set {
 			Text.PRINT($"\n	Validating contents of {this.set}...");
 
 			start= this.elements.IndexOf(x.set);
+
+			Text.COMMAND($"\nPRINT_ELEMENTS(this.set);");
+			Text.COMMAND($"{this.elements}");
 				
-			if (this.elements[start - 1] == ',') {
-
+			try {
+					
+				// ,{}
 				this.elements= this.elements.Remove(start - 1, length + 1);
-			
+
 				}
-			
-			else if (this.elements[start + length] == ',') {
+		
+			catch {
+
+				try {	
+					
+					// {},	
+					this.elements= this.elements.Remove(start, length + 1);
+
+					}
 	
-				this.elements= this.elements.Remove(start, length + 1);
+				catch {
+					
+					// {}
+					this.elements= this.elements.Remove(start, length);
+
+					}
 
 				}
-			
-			else {
-
-				this.elements= this.elements.Remove(start, length);
-
-				}
-			
+				
 			Text.COMMAND($"\nPRINT_ELEMENTS(this.set);");
 			Text.COMMAND($"{this.elements}");
 	
-			Text.PRINT($"	Contents validated!");
+			Text.PRINT($"\n	Contents validated!");
 			Text.COMMAND($"\nPRINT_Set();");
 			Text.COMMAND($"{this.set}");
 	
@@ -212,17 +222,176 @@ class Set {
 
 		}
 
-	static void Main(string[] arg) {
+	}
+
+class CHAPTERS {
+
+	public static void Chapter_4() {
+
+		Console.WriteLine("\x1b[2J");
+		Text.PRINT("\n				Chapter 4: Removing Elements From Sets");
+		Text.PRINT("\n			\"We can remove an element from a set with Remove_Element(Set x).\n			{Set x} is the elemnt to be removed from the set calling the\n			function.\"");
+
+		// Remove Low element
+
+		Set X= new Set("X");
+		Set Y= new Set("Y");
+		Set XY= Set.PairSet(X,Y);
+		Set Y_2= XY.Remove_Element(X);
+
+		// Remove High Element
+
+		Y= Set.UnionSet(Y);
+		XY= Set.PairSet(X,Y);
+		Set X_2= XY.Remove_Element(Y);
+		X= Set.UnionSet(X);
+
+		// Remove Middle Element
 
 		Set ONE= new Set("1");
 		Set TWO= new Set("2");
 		Set THREE= new Set("3");
 
-		Set x1= Set.UnionSet(ONE,TWO);
-		x1= Set.UnionSet(x1, THREE);
-
+		Set vals= Set.UnionSet(ONE, TWO);
+		vals= Set.UnionSet(vals, THREE);	
 		TWO= Set.UnionSet(TWO);
-		x1= x1.Remove_Element(TWO);
+		vals= vals.Remove_Element(TWO);
+
+		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
+
+		CHAPTERS.Get_Chapter("");
+
+		}
+
+	public static void Chapter_3() {
+
+		Console.WriteLine("\x1b[2J");
+		Text.PRINT("\n				Section 3: Union Sets");
+		Text.PRINT("\n			\"We can generate the union set between two \n			sets with UnionSet(Set x, Set y).\"");
+
+		Set X= new Set("X");
+		Set Y= new Set("Y");
+		Set XUY= Set.UnionSet(X,Y);	
+
+		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
+
+		CHAPTERS.Get_Chapter("4");
+
+		}
+
+	public static void Chapter_2() {
+
+		Console.WriteLine("\x1b[2J");
+		Text.PRINT("\n				Section 2: Pair Sets");
+		Text.PRINT("\n			\"We can generate the pair set between two sets \n			with PairSet(Set x, Set y).\"");
+
+		Set X= new Set("X");
+		Set Y= new Set("Y");
+		Set XY= Set.PairSet(X,Y);
+
+		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
+
+		CHAPTERS.Get_Chapter("3");
+
+		}
+
+	public static void Chapter_1() {
+
+		Console.WriteLine("\x1b[2J");
+		Text.PRINT("				Section 1: Generating Sets");
+		Text.PRINT("\n			\"We can generate a new empty set with Set().\"");
+		Set Empty_Set= new Set();
+
+		Text.PRINT("\n			\"We can generate a set with a string of \n			elements with Set(string arg).\"");
+
+		Set X= new Set("X");
+		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
+
+		CHAPTERS.Get_Chapter("2");
+
+		}
+
+	public static void Intro() {
+
+		Console.WriteLine("\x1b[2J");
+		Text.PRINT("\n					Notes on Sets\n");
+		Text.PRINT("\n			Table of Contents:");
+		Text.PRINT("\n				Chapter 1: Generating Sets");
+		Text.PRINT("\n				Chapter 2: Pair Sets");
+		Text.PRINT("\n				Chapter 3: Union Sets");
+		Text.PRINT("\n				Chapter 4: Removing Elements From Sets\n");
+		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
+		
+		CHAPTERS.Get_Chapter("1");
+	
+		}
+
+	public static void Get_Chapter(string arg) {
+
+		string x= Console.ReadLine();
+
+		switch (x) {
+
+		case "1":
+
+			CHAPTERS.Chapter_1();
+			break;
+
+		case "2":
+
+			CHAPTERS.Chapter_2();
+			break;
+		
+		case "3":
+
+			CHAPTERS.Chapter_3();
+			break;
+
+		case "4":
+
+			CHAPTERS.Chapter_4();
+			break;
+
+		case "":
+
+			switch (arg) {
+
+			case "1":
+
+				CHAPTERS.Chapter_1();
+				break;
+
+			case "2":
+
+				CHAPTERS.Chapter_2();
+				break;
+			
+			case "3":
+
+				CHAPTERS.Chapter_3();
+				break;
+
+			case "4":
+
+				CHAPTERS.Chapter_4();
+				break;
+
+			case "":
+
+				CHAPTERS.Intro();
+				break;
+			
+				}
+
+			break;
+
+			}
+		
+		}
+
+	static void Main(string[] arg) {
+
+		CHAPTERS.Intro();
 
 		}
 
