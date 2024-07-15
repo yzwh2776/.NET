@@ -34,7 +34,6 @@
 
 	}
 
-
 class Set {
 
 	public string elements;
@@ -68,6 +67,63 @@ class Set {
 	
 		}
 
+	public Set Element_At(int i) {
+
+		Text.COMMAND($"\nRUN_Element_At({i});");
+		Text.PRINT("\n	Running Element_at()...");
+
+		string temp_elements= this.elements;
+		int index;
+		string s= "";
+
+		for (int j= 0; j <= i; j++) {
+	
+			index= temp_elements.IndexOf(',');
+			s= temp_elements.Substring(0, index);
+			temp_elements= temp_elements.Remove(0, index + 1);
+
+			}
+		
+		Set temp_set= new Set(s);
+
+		return Set.UnionSet(temp_set);
+
+		}
+
+	public static int Get_Cardinality(Set x) {
+	
+		Text.COMMAND($"\nRUN_Get_Cardinality({x});");
+		Text.PRINT("\n	Running Get_Cardinality()...");
+
+		Set temp_x= x;
+		int count= 1;
+
+		do {
+
+			try { 
+
+				temp_x.Remove_Element(temp_x.Element_At(0));
+				count++;
+	
+				}
+
+			catch { 
+		
+				break;
+
+				}
+
+			}
+
+		while (temp_x.set != "{}"); 
+
+		Text.COMMAND($"\nPRINT_Get_Cardinality();");
+		Text.COMMAND($"{count}");
+
+		return count;
+
+		}
+	
 	public static Set PairSet(Set x, Set y) {
 
 		Text.COMMAND($"\nRUN_PairSet({x.set},{y.set});");
@@ -174,9 +230,6 @@ class Set {
 			Text.PRINT($"\n	Validating contents of {this.set}...");
 
 			start= this.elements.IndexOf(x.set);
-
-			Text.COMMAND($"\nPRINT_ELEMENTS(this.set);");
-			Text.COMMAND($"{this.elements}");
 				
 			try {
 					
@@ -226,6 +279,24 @@ class Set {
 
 class CHAPTERS {
 
+	public static void Chapter_5() {
+
+		Console.WriteLine("\x1b[2J");
+		Text.PRINT("\n				Chapter 5: Cardinalty and Index of Sets");
+	
+		Text.PRINT("\n			Using Element_At() we can find the index of an element in a set.");
+		Text.PRINT("\n			Using Get_Cardinality() we can find the cardinality of a set,\n			or the number of elements in the set.");
+
+		Set X= new Set("1,2,3");
+		Set e= X.Element_At(1);
+		Set.Get_Cardinality(X);	
+
+		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
+
+		CHAPTERS.Get_Chapter("");
+		
+		}
+
 	public static void Chapter_4() {
 
 		Console.WriteLine("\x1b[2J");
@@ -259,14 +330,14 @@ class CHAPTERS {
 
 		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
 
-		CHAPTERS.Get_Chapter("");
+		CHAPTERS.Get_Chapter("5");
 
 		}
 
 	public static void Chapter_3() {
 
 		Console.WriteLine("\x1b[2J");
-		Text.PRINT("\n				Section 3: Union Sets");
+		Text.PRINT("\n				Chapter 3: Union Sets");
 		Text.PRINT("\n			\"We can generate the union set between two \n			sets with UnionSet(Set x, Set y).\"");
 
 		Set X= new Set("X");
@@ -282,7 +353,7 @@ class CHAPTERS {
 	public static void Chapter_2() {
 
 		Console.WriteLine("\x1b[2J");
-		Text.PRINT("\n				Section 2: Pair Sets");
+		Text.PRINT("\n				Chapter 2: Pair Sets");
 		Text.PRINT("\n			\"We can generate the pair set between two sets \n			with PairSet(Set x, Set y).\"");
 
 		Set X= new Set("X");
@@ -298,7 +369,7 @@ class CHAPTERS {
 	public static void Chapter_1() {
 
 		Console.WriteLine("\x1b[2J");
-		Text.PRINT("				Section 1: Generating Sets");
+		Text.PRINT("				Chapter 1: Generating Sets");
 		Text.PRINT("\n			\"We can generate a new empty set with Set().\"");
 		Set Empty_Set= new Set();
 
@@ -319,7 +390,8 @@ class CHAPTERS {
 		Text.PRINT("\n				Chapter 1: Generating Sets");
 		Text.PRINT("\n				Chapter 2: Pair Sets");
 		Text.PRINT("\n				Chapter 3: Union Sets");
-		Text.PRINT("\n				Chapter 4: Removing Elements From Sets\n");
+		Text.PRINT("\n				Chapter 4: Removing Elements From Sets");
+		Text.PRINT("\n				Chapter 5: Cardinality and Index of Sets\n");
 		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
 		
 		CHAPTERS.Get_Chapter("1");
@@ -352,6 +424,11 @@ class CHAPTERS {
 			CHAPTERS.Chapter_4();
 			break;
 
+		case "5":
+
+			CHAPTERS.Chapter_5();
+			break;
+
 		case "":
 
 			switch (arg) {
@@ -374,6 +451,11 @@ class CHAPTERS {
 			case "4":
 
 				CHAPTERS.Chapter_4();
+				break;
+
+			case "5":
+
+				CHAPTERS.Chapter_5();
 				break;
 
 			case "":

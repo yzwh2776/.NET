@@ -245,3 +245,14 @@ class, and chapters are the child class.
 
 I got everything figured out as of right now! We have pair sets and union sets, and a method
 to remove elements from sets. I think I should work on building my notes up again now.
+
+The next feature is going to be intersections. Let's try to figure that method out. 
+
+Given two sets, {1,2,3} and {2,3,4}, the intersection of these two sets is their union set
+with the requirement that an element belong to both sets. 
+
+Actually, I think we need SubSet(). But I'm not sure how we might make this function. I 
+think we need to count the commas so we can use an index. This will likely cause me to 
+restructure this entire project again. 
+
+We really need to do this in a linked list.
