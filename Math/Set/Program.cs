@@ -67,6 +67,12 @@ class Set {
 	
 		}
 
+	public bool Is_Empty() {
+
+		return this.elements == "";
+
+		}
+
 	public Set Element_At(int i) {
 
 		Text.COMMAND($"\nRUN_Element_At({i});");
@@ -92,10 +98,10 @@ class Set {
 
 	public static int Get_Cardinality(Set x) {
 	
-		Text.COMMAND($"\nRUN_Get_Cardinality({x});");
+		Text.COMMAND($"\nRUN_Get_Cardinality({x.set});");
 		Text.PRINT("\n	Running Get_Cardinality()...");
 
-		Set temp_x= x;
+		Set temp_x= new Set(x.elements);
 		int count= 1;
 
 		do {
@@ -115,7 +121,7 @@ class Set {
 
 			}
 
-		while (temp_x.set != "{}"); 
+		while (!temp_x.Is_Empty()); 
 
 		Text.COMMAND($"\nPRINT_Get_Cardinality();");
 		Text.COMMAND($"{count}");
@@ -256,7 +262,7 @@ class Set {
 
 				}
 				
-			Text.COMMAND($"\nPRINT_ELEMENTS(this.set);");
+			Text.COMMAND($"\nPRINT_ELEMENTS({this.set});");
 			Text.COMMAND($"{this.elements}");
 	
 			Text.PRINT($"\n	Contents validated!");
@@ -275,9 +281,78 @@ class Set {
 
 		}
 
+	// Still need Equivalence(), SubSet(), Intersect()
+
+	public static Set Intersect(Set x, Set y) {
+
+		Text.COMMAND($"\nRUN_Intersect({x.set}, {y.set});");
+		Text.PRINT("\n	Running Intersect()...");
+
+		int card_x= Set.Get_Cardinality(x);
+		int card_y= Set.Get_Cardinality(y);
+
+		int length;
+
+		if (card_x <= card_y) {
+
+			length= card_x;
+			
+			}
+
+		else {
+			
+			length= card_y;
+
+			}
+
+		Set intersection= new Set();
+
+		for (int i= 0; i < length; i++) {
+
+			if (y.Contains_Element(x.Element_At(i))) {
+
+				if (!intersection.Is_Empty() ) {
+
+				intersection= Set.UnionSet(intersection, x.Element_At(i));
+
+
+					}
+
+				else {
+
+					intersection= Set.UnionSet(x.Element_At(i));
+
+					}
+
+				}	
+
+			}
+
+		Text.PRINT("\n	Finished running Intersect()!");
+		return intersection;
+
+		}
+
 	}
 
 class CHAPTERS {
+
+	public static void Chapter_6() {
+
+		Console.WriteLine("\x1b[2J");
+		Text.PRINT("\n				Chapter 6: Intersection of Sets");
+		Text.PRINT("\n			We can generate the intersection set using Intersect(Set x, Set y)");
+		
+		Set x1= new Set("1,2,3");
+		Set x2= new Set("1,2");
+
+		Set.Intersect(x1, x2);
+
+		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
+
+		CHAPTERS.Get_Chapter("");
+
+		}
 
 	public static void Chapter_5() {
 
@@ -391,7 +466,9 @@ class CHAPTERS {
 		Text.PRINT("\n				Chapter 2: Pair Sets");
 		Text.PRINT("\n				Chapter 3: Union Sets");
 		Text.PRINT("\n				Chapter 4: Removing Elements From Sets");
-		Text.PRINT("\n				Chapter 5: Cardinality and Index of Sets\n");
+		Text.PRINT("\n				Chapter 5: Cardinality and Index of Sets");
+		Text.PRINT("\n				Chapter 6: Intersection of Sets\n");
+		
 		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
 		
 		CHAPTERS.Get_Chapter("1");
@@ -429,6 +506,11 @@ class CHAPTERS {
 			CHAPTERS.Chapter_5();
 			break;
 
+		case "6":
+
+			CHAPTERS.Chapter_6();
+			break;
+
 		case "":
 
 			switch (arg) {
@@ -456,6 +538,11 @@ class CHAPTERS {
 			case "5":
 
 				CHAPTERS.Chapter_5();
+				break;
+
+			case "6":
+			
+				CHAPTERS.Chapter_6();
 				break;
 
 			case "":
