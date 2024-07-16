@@ -84,9 +84,19 @@ class Set {
 
 		for (int j= 0; j <= i; j++) {
 	
+			try {
+
 			index= temp_elements.IndexOf(',');
 			s= temp_elements.Substring(0, index);
 			temp_elements= temp_elements.Remove(0, index + 1);
+
+				}
+
+			catch {
+
+				s= temp_elements;
+			
+				}
 
 			}
 		
@@ -102,7 +112,7 @@ class Set {
 		Text.PRINT("\n	Running Get_Cardinality()...");
 
 		Set temp_x= new Set(x.elements);
-		int count= 1;
+		int count= 0;
 
 		do {
 
@@ -281,8 +291,6 @@ class Set {
 
 		}
 
-	// Still need Equivalence(), SubSet(), Intersect()
-
 	public static Set Intersect(Set x, Set y) {
 
 		Text.COMMAND($"\nRUN_Intersect({x.set}, {y.set});");
@@ -333,6 +341,27 @@ class Set {
 
 		}
 
+	public static bool Equivalent(Set x, Set y) {
+
+		Text.COMMAND($"\nRUN_Equivalent({x.set}, {y.set});");
+		Text.PRINT($"\n	Running Equivalent()...");
+	
+		if (x.set == Set.Intersect(x, y).set) {
+
+			Text.PRINT("\n	Sets are equivalent!");
+			return true;
+
+			}
+
+		else {
+
+			Text.PRINT("\n	Sets are not equivalent!");
+			return false;
+		
+			}
+		
+		}
+
 	}
 
 class CHAPTERS {
@@ -340,13 +369,17 @@ class CHAPTERS {
 	public static void Chapter_6() {
 
 		Console.WriteLine("\x1b[2J");
-		Text.PRINT("\n				Chapter 6: Intersection of Sets");
+		Text.PRINT("\n				Chapter 6: Intersections, Equivalence, and Subsets");
 		Text.PRINT("\n			We can generate the intersection set using Intersect(Set x, Set y)");
 		
 		Set x1= new Set("1,2,3");
 		Set x2= new Set("1,2");
 
-		Set.Intersect(x1, x2);
+		Set intersect= Set.Intersect(x1, x2);
+
+		Text.PRINT("\n			\"Using Intersect() we can easily check if two sets are equivalent.\"");
+
+		Set.Equivalent(x2, intersect); 
 
 		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
 
@@ -467,7 +500,7 @@ class CHAPTERS {
 		Text.PRINT("\n				Chapter 3: Union Sets");
 		Text.PRINT("\n				Chapter 4: Removing Elements From Sets");
 		Text.PRINT("\n				Chapter 5: Cardinality and Index of Sets");
-		Text.PRINT("\n				Chapter 6: Intersection of Sets\n");
+		Text.PRINT("\n				Chapter 6: Intersections, Equivalence, and Subsets\n");
 		
 		Text.PRINT("\nEnter section number <#>, or press <enter> to continue...");
 		
