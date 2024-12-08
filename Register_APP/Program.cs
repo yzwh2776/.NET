@@ -1,32 +1,89 @@
 ﻿using System.Collections.Generic
 
-;public class Item {
+;public class Ingredient {
 
-	public string ITEM_NAME
+	public string NAME
 	;public int IOH
-	;public int UNIT_PRICE
 
-	;public Item() {
+	;public Ingredient() {
 
-		ITEM_NAME= "New Item"
-		;IOH= 0
-		;UNIT_PRICE= 1
+		NAME= "New Ingredient"
+		;IOH= 9999	
 
 		;}
 
-	public Item(string name, int stock, int cost) {
+	public Ingredient(string name) {
+	
+		NAME= name
+		;IOH= 9999
 
-		ITEM_NAME= name
+		;}
+
+	public Ingredient(string name, int stock) {
+
+		NAME= name
 		;IOH= stock
-		;UNIT_PRICE= cost
+
+		;}
+
+	public override string ToString() {
+		
+		return this.NAME + " (" + this.IOH + ")"
 
 		;}
 
 	}
 
-class Register {
+class FRAME {
 
-	// private List<Item> Inventory= new List<Item>()
+	private static int ROWS= 36
+	;private static int COLS= 128
+	;private static char[] SCREEN=new char[ROWS * COLS]
+
+	;public FRAME() {
+
+		for(int i= 0; i < SCREEN.Length; i++) {
+
+			SCREEN[i]= '*'
+
+			;}
+
+		;}
+
+	public void Print() {
+
+		foreach(char c in SCREEN) {
+
+			Console.Write(c)
+
+			;}
+
+		;}	
+
+	}
+
+class Register {
+	
+	public Dictionary<string, Ingredient> Inventory= new Dictionary<string, Ingredient>()
+
+	;public void __init__() {
+	
+		Ingredient REG_BUN= new Ingredient("Regular Bun")
+		;Inventory.Add(REG_BUN.NAME, REG_BUN)
+		;Ingredient REG_MEAT= new Ingredient("Regular Meat")
+		;Inventory.Add(REG_MEAT.NAME, REG_MEAT)
+		;Ingredient CHEESE= new Ingredient("Cheese Slice")
+		;Inventory.Add(CHEESE.NAME, CHEESE)
+		;Ingredient DH_ONION= new Ingredient("Dehydrated Onion")
+		;Inventory.Add(DH_ONION.NAME, DH_ONION)
+		;Ingredient PICKLE= new Ingredient("Pickle")
+		;Inventory.Add(PICKLE.NAME, PICKLE)
+		;Ingredient KETCHUP= new Ingredient("Ketchup")
+		;Inventory.Add(KETCHUP.NAME, KETCHUP)
+		;Ingredient MUSTARD= new Ingredient("Mustard")
+		;Inventory.Add(MUSTARD.NAME, MUSTARD)
+
+		;}
 
 	private int CASH
 
@@ -36,20 +93,32 @@ class Register {
 
 		;}
 
-	public void SELL(Item item) {
+	public void SELL_MCDOUBLE(int quantity) {
+	
+		for(int i= 0; i < quantity; i++) {
 
-		CASH+= item.UNIT_PRICE
-		;item.IOH--
+			Inventory["Regular Meat"].IOH--
+			;Inventory["Regular Meat"].IOH--
+			;Inventory["Cheese Slice"].IOH--
+			;Inventory["Dehydrated Onion"].IOH--
+			;Inventory["Pickle"].IOH--
+			;Inventory["Ketchup"].IOH--
+			;Inventory["Mustard"].IOH--
+		
+			;CASH+= 249
+
+			;}
 
 		;}
 
 	public static int Main() {
 
-		Register reg= new Register()
-	
-		;Item BIGMAC= new Item("Big Mac", 100, 1)
-		;reg.SELL(BIGMAC)	
-		;Console.Write(reg.CASH)
+		;Register reg= new Register()
+		;reg.__init__()
+
+		;FRAME gui= new FRAME()
+		;gui.Print()
+		
 
 		;return 0	
 
