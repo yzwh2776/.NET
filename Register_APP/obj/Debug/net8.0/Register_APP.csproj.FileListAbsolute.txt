@@ -1,0 +1,15 @@
+C:\Users\mitch\OneDrive\Documents\GitHub\.NET\Register_APP\obj\Debug\net8.0\Register_APP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mitch\OneDrive\Documents\GitHub\.NET\Register_APP\obj\Debug\net8.0\Register_APP.AssemblyInfoInputs.cache
+C:\Users\mitch\OneDrive\Documents\GitHub\.NET\Register_APP\obj\Debug\net8.0\Register_APP.AssemblyInfo.cs
+C:\Users\mitch\OneDrive\Documents\GitHub\.NET\Register_APP\obj\Debug\net8.0\Register_APP.csproj.CoreCompileInputs.cache
+C:\Users\mitch\OneDrive\Documents\GitHub\.NET\Register_APP\obj\Debug\net8.0\Register_APP.sourcelink.json
+C:\Users\mitch\OneDrive\Documents\GitHub\.NET\Register_APP\bin\Debug\net8.0\Register_APP.exe
+C:\Users\mitch\OneDrive\Documents\GitHub\.NET\Register_APP\bin\Debug\net8.0\Register_APP.deps.json
+C:\Users\mitch\OneDrive\Documents\GitHub\.NET\Register_APP\bin\Debug\net8.0\Register_APP.runtimeconfig.json
+C:\Users\mitch\OneDrive\Documents\GitHub\.NET\Register_APP\bin\Debug\net8.0\Register_APP.dll
+C:\Users\mitch\OneDrive\Documents\GitHub\.NET\Register_APP\bin\Debug\net8.0\Register_APP.pdb
+C:\Users\mitch\OneDrive\Documents\GitHub\.NET\Register_APP\obj\Debug\net8.0\Register_APP.dll
+C:\Users\mitch\OneDrive\Documents\GitHub\.NET\Register_APP\obj\Debug\net8.0\refint\Register_APP.dll
+C:\Users\mitch\OneDrive\Documents\GitHub\.NET\Register_APP\obj\Debug\net8.0\Register_APP.pdb
+C:\Users\mitch\OneDrive\Documents\GitHub\.NET\Register_APP\obj\Debug\net8.0\Register_APP.genruntimeconfig.cache
+C:\Users\mitch\OneDrive\Documents\GitHub\.NET\Register_APP\obj\Debug\net8.0\ref\Register_APP.dll
